@@ -1,0 +1,180 @@
+@font-face {
+    font-family: "black_and_violet";
+    src: url(../font/black_and_violet/Black\ and\ Violet\ -\ Personal\ Use.otf);
+}
+*{
+    margin: 0;
+    padding: 0;  
+}
+body{
+    /* background-color: #ffcecb; */
+    font-family: 'Open Sans', sans-serif;
+}
+.grid-contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-gap: 20px;
+    grid-template-areas: 
+    "header header header"
+	"nav nav nav"
+    "articulos articulos articulos"
+    "contenido contenido aside"
+    "footer footer footer";
+}
+
+/* Encabezado de la página */
+header{
+    background-color: #98baff;
+    grid-area: header;
+	display: inline-block;
+	font-family: "black_and_violet";
+    font-size: 70px;
+	text-align: center;
+}
+/***************************/
+
+/* Navegador de la página */
+nav{
+    background-color: #3b59acf1;
+    grid-area: nav;
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+.menu a{
+    display: block;
+    background-color: #3b59ac;
+    text-decoration: none;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 22px;
+	border-radius: 0 0 20px 20px;
+	width: 120px;
+    text-align: center;
+}
+.menu ul li ul{
+    display: none;    
+}
+.menu a:hover{
+    background-color: #6a87a8;
+}
+.menu ul li:hover > ul{
+    display: block;
+    position: absolute;
+}
+/**************************/
+
+/* Titulo de lo que trata la página */
+.articulos{
+    grid-area: articulos;
+    width: 100%;
+}
+.articulos h2{
+    color: #FFF;
+    font-size: 80px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px 20px;
+    background: #6a87a8;
+}
+/***********************/
+
+/* cuerpo de la página */
+main{
+    background-color: #fff;
+    grid-area: contenido;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+article{
+	background: #EAFBEA;
+    width: 200px;
+    height: 400px;
+    padding: 30px 20px;
+    margin: 30px 20px;
+    /* clear: both; */
+	border-radius: 10px;
+}
+.proyecto{
+	float: both;
+}
+.proyecto__imagen{
+   width: 200px;
+   height: 50%;
+}
+article .proyecto__titulo{
+	color: #142850;
+	font-family: sans-serif;
+	font-weight: 500;
+}
+.proyecto__titulo h3{
+	background: #EAFBEA;
+}
+.proyecto__titulo p{
+	background: #EAFBEA;
+}
+.proyecto1__imagen{
+   width: 300px;
+   height: 50%;
+}
+.proyecto1__titulo{
+	color: #142850;
+	font-family: sans-serif;
+	font-weight: 500;
+}
+/************************/
+
+/* Menú de otras páginas */
+aside{
+    background-color: chocolate;
+    grid-area: aside;
+    padding: 100%;
+    display: flex;
+    /* justify-content: flex-start; */
+}
+/************************/
+
+/* Pie de página */
+footer{
+    background-color: #2abcd0;
+    grid-area: footer;
+}
+.pie{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.pie li{
+    list-style: none;
+}
+/****************/
+
+header, main, aside, footer, .video, .noticia{
+    padding: 20px;
+}
+
+@media(max-width:600px){
+    body{
+        background-color: rgb(248, 175, 189);
+    }
+    .grid-contenedor{
+        grid-template-areas: 
+        "header header header"
+		"nav nav nav"
+        "articulos articulos articulos"
+        "contenido contenido contenido"
+        "aside aside aside"
+        "footer footer footer";
+    }
+    header{
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+    }
+}
